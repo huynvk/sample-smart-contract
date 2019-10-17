@@ -1,0 +1,19 @@
+{
+  "name": "smartcontract",
+  "version": "1.0.0",
+  "description": "Sample for smart contract on ETH",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "truffle test"
+  },
+  "author": "Huy Ngo",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "4.2.0",
+    "chai-as-promised": "7.1.1",
+    "chai-bignumber": "3.0.0"
+  }
+}
