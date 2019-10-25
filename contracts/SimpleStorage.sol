@@ -2,7 +2,7 @@ pragma solidity ^0.5.8;
 
 contract SimpleStorage {
     uint public storedData;
-    address public owner;
+    address payable public owner;
 
     constructor() public {
         owner = msg.sender;
@@ -16,4 +16,11 @@ contract SimpleStorage {
     function get() public view returns (uint) {
         return storedData;
     }
+
+    modifier restricted() {
+        require(msg.sender == owner, 'Require owner');
+        _;
+    }
+
+    function kill() public restricted  { selfdestruct(owner); }
 }
